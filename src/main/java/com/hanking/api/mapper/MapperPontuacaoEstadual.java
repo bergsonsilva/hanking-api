@@ -1,6 +1,6 @@
 package com.hanking.api.mapper;
 
-import com.hanking.api.type.TypePontuacaoEstadual;
+import com.hanking.api.atleta.type.TypePontuacaoEstadual;
 
 import java.util.HashMap;
 import java.util.Map;

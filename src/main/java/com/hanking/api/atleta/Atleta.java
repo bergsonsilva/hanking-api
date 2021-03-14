@@ -1,11 +1,12 @@
-package com.hanking.api.model;
+package com.hanking.api.atleta;
 
-import com.hanking.api.model.dto.AtletaDto;
 import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+
 import java.util.List;
+
 @Data
 @Getter
 @Setter

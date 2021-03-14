@@ -1,9 +1,10 @@
-package com.hanking.api.repository;
+package com.hanking.api.atleta;
 
-import com.hanking.api.model.Atleta;
 import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
+import org.springframework.stereotype.Repository;
 import reactor.core.publisher.Mono;
 
+@Repository
 public interface AtletaRepository extends ReactiveMongoRepository<Atleta, String> {
-  public Mono<Atleta> findByNome(String nome);
+     Mono<Atleta> findByNome(String nome);
 }

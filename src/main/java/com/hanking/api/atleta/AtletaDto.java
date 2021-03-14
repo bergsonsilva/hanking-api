@@ -1,6 +1,5 @@
-package com.hanking.api.model.dto;
+package com.hanking.api.atleta;
 
-import com.hanking.api.model.Atleta;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

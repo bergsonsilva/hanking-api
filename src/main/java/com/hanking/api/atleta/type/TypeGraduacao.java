@@ -1,4 +1,4 @@
-package com.hanking.api.type;
+package com.hanking.api.atleta.type;
 
 public enum TypeGraduacao {
     BRONCA,

@@ -1,14 +1,9 @@
-package com.hanking.api.service;
+package com.hanking.api.atleta;
 
-import com.hanking.api.model.Atleta;
-import com.hanking.api.model.dto.AtletaDto;
-import com.hanking.api.repository.AtletaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-
-import java.time.LocalDate;
 
 @Service
 public class AtletaService {

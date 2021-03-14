@@ -1,0 +1,40 @@
+spring:
+  data:
+    mongodb:
+      database: tkdranking
+      uri: mongodb+srv://ptkaadmin:Orlof8920@cluster0.6uzfs.mongodb.net/tkdranking?retryWrites=true&w=majority
+  output:
+    ansi:
+      enabled: ALWAYS
+
+ springdoc:
+  api-docs:
+    path: /api-docs
+  packagesToScan: com.hanking.api.atleta
+  pathsToMatch: /atleta"/**
+  springdoc:
+    version: '@springdoc.version@'
+server:
+  servlet:
+    context-path: /
+  compression:
+    enabled: true
+    mime-types: text/html,text/xml,text/plain,text/css,text/javascript,application/javascript,application/json
+    min-response-size: 1024
+  http2:
+    enabled: true
+  resources:
+    cache:
+      period: 31536000
+      cachecontrol:
+        max-age: 31536000
+    chain:
+      html-application-cache: true
+      enabled: true
+      strategy:
+        content:
+          enabled: true
+          paths: /webjars/swagger-ui/**.*
+
+
+
