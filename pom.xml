@@ -110,38 +110,6 @@
 		</dependencies>
 	</dependencyManagement>
 
-	<profiles>
-		<profile>
-			<id>jar</id>
-			<activation>
-				<activeByDefault>true</activeByDefault>
-			</activation>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>com.heroku.sdk</groupId>
-						<artifactId>heroku-maven-plugin</artifactId>
-						<version>3.0.2</version>
-					</plugin>
-				</plugins>
-			</build>
-<!--			<dependencies>-->
-<!--				<dependency>-->
-<!--					<groupId>io.netty</groupId>-->
-<!--					<artifactId>netty-transport-native-epoll</artifactId>-->
-<!--				</dependency>-->
-<!--				<dependency>-->
-<!--					<groupId>io.netty</groupId>-->
-<!--					<artifactId>netty-transport-native-unix-common</artifactId>-->
-<!--				</dependency>-->
-<!--				<dependency>-->
-<!--					<groupId>io.netty</groupId>-->
-<!--					<artifactId>netty-codec-http2</artifactId>-->
-<!--				</dependency>-->
-<!--			</dependencies>-->
-		</profile>
-	</profiles>
-
 	<build>
 		<resources>
 			<resource>
@@ -152,8 +120,39 @@
 				</includes>
 			</resource>
 		</resources>
+		<plugins>
+			<plugin>
+				<groupId>com.heroku.sdk</groupId>
+				<artifactId>heroku-maven-plugin</artifactId>
+				<configuration>
+					<processTypes>
+						<web>java $JAVA_OPTS -cp target/classes:target/dependency/* Main</web>
+					</processTypes>
+				</configuration>
+			</plugin>
+		</plugins>
 	</build>
 
+	<profiles>
+		<profile>
+			<id>prod</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>com.heroku.sdk</groupId>
+						<artifactId>heroku-maven-plugin</artifactId>
+						<version>3.0.2</version>
+						<configuration>
+							<appName>hanking-api</appName>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 	<pluginRepositories>
 		<pluginRepository>
 			<id>spring-snapshots</id>
@@ -172,5 +171,6 @@
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
+
 
 </project>
