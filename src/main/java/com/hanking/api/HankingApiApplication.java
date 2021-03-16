@@ -31,8 +31,9 @@ public class HankingApiApplication {
 
     @Bean
     public GroupedOpenApi atletaOpenApi() {
-        String[] paths = {"/**"};
-        return GroupedOpenApi.builder().group("atleta").pathsToMatch(paths)
+        String[] paths = {"/**","/favicon.ico"};
+        return GroupedOpenApi.builder().group("atleta")
+                .pathsToMatch(paths)
                 .build();
     }
 
