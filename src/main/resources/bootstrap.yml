@@ -20,7 +20,7 @@ springdoc:
   api-docs:
     path: /api-docs
   packagesToScan: com.hanking.api.atleta
-  pathsToMatch: /atleta"/**
+  pathsToMatch: /atleta/**
   springdoc:
     version: '@springdoc.version@'
 server:

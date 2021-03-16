@@ -31,7 +31,7 @@ public class HankingApiApplication {
 
     @Bean
     public GroupedOpenApi atletaOpenApi() {
-        String[] paths = {"/atleta/**"};
+        String[] paths = {"/**"};
         return GroupedOpenApi.builder().group("atleta").pathsToMatch(paths)
                 .build();
     }
